@@ -19,7 +19,7 @@ namespace Logging
             {
                 throw new Exception("Пустой путь к файлу");
             }
-            _path = path; //TODO Прописать проверку возможности использования пути к файлу
+            _path = path;
         }
 
         private void WriteToFile(string message)
@@ -35,8 +35,7 @@ namespace Logging
             }
             catch (ArgumentException)
             {
-                throw new Exception(
-                    "Параметр path пуст или path содержит имя системного устройства (com1, com2 и т. д.)");
+                throw new Exception("Параметр path пуст или path содержит имя системного устройства (com1, com2 и т. д.)");
             }
             catch (DirectoryNotFoundException)
             {
